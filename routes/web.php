@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard/home-insurance', function () {
+    return view('dashboard.homeinsurance.index');
+});
+
+Route::get('/dashboard/home-insurance/create', function () {
+    return view('dashboard.homeinsurance.create');
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.homeinsurance.index');
 });
