@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\InsurancePolicy;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +14,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->seedInsurance();
+    }
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+    private function seedInsurance(){
+        $insurancePolicies = [
+            [
+                'name'            => 'home',
+                'default_premium' => 2000
+            ],
+            [
+                'name'            => 'car',
+                'default_premium' => 3000
+            ],
+            [
+                'name'            => 'life',
+                'default_premium' => 4000
+            ],
+        ];
+
+        foreach ($insurancePolicies as $value) {
+            InsurancePolicy::create($value);
+        }
     }
 }

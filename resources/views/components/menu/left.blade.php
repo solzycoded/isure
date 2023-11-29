@@ -5,24 +5,12 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-        <x-menu.item :link="'home-insurance'" :title="'Home Insurance'" :icon="'house-fill'" />
+        <x-menu.item :link="''" :title="'Insurance Policies'" :icon="'list-check'" />
 
-        <x-menu.item :link="'car-insurance'" :title="'Car Insurance'" :icon="'car-front-fill'" />
+        <x-menu.item :link="'covers/home'" :title="'Home Insurance'" :icon="'house-fill'" />
 
-        <x-menu.item :link="'life-insurance'" :title="'Life Insurance'" :icon="'person-arms-up'" />
+        <x-menu.item :link="'covers/car'" :title="'Car Insurance'" :icon="'car-front-fill'" />
 
-        <x-menu.item :link="'settings'" :title="'Settings'" :icon="'gear-fill'" />
-
-        <li class="nav-item">
-            <form action="/log-out" method="POST">
-                @csrf
-
-                <button class="nav-link text-white btn btn-transparent" aria-current="page">
-                    <span>
-                        <i class="bi bi-power" style="font-size: 18px; margin-right: 5px;"></i> Log out
-                    </span>
-                </button>
-            </form>
-        </li>
+        <x-menu.item :link="'covers/life'" :title="'Life Insurance'" :icon="'person-arms-up'" />
     </ul>
 </div>

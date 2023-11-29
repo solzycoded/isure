@@ -8,39 +8,21 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 only-small-screen">
                 <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="/dashboard/home-insurance">
+                    <a class="nav-link text-white" href="/insurance-policies/covers/home">
                         Home Insurance
                     </a>
                 </li>
 
                 <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="/dashboard/car-insurance">
+                    <a class="nav-link text-white" href="/insurance-policies/covers/car">
                         Car Insurance
                     </a>
                 </li> 
 
                 <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="/dashboard/life-insurance">
+                    <a class="nav-link text-white" href="/insurance-policies/covers/life">
                         Life Insurance
                     </a>
-                </li>
-
-                <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="/dashboard/settings">
-                        Settings
-                    </a>
-                </li>
-
-                <li class="nav-item text-white">
-                    <form action="/log-out" method="POST">
-                        @csrf
-        
-                        <button class="nav-link text-white btn btn-transparent p-0 pt-1" aria-current="page">
-                            <span>
-                                <i class="bi bi-power me-1" style="font-size: 20px;"></i> Logout
-                            </span>
-                        </button>
-                    </form>
                 </li>
             </ul>
         </div>

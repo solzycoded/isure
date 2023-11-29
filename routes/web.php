@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\InsurancePolicyController;
+use App\Http\Controllers\InsurancePolicyCoverController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard/home-insurance', function () {
-    return view('dashboard.homeinsurance.index');
-});
+Route::get('/insurance-policies/{insurancePolicy:name}-insurance/create', [InsurancePolicyCoverController::class, 'create']);
+Route::post('/insurance-policies/{insurancePolicy:name}-insurance/create', [InsurancePolicyCoverController::class, 'store']);
+Route::delete('/insurance-cover/delete/{insuranceCover:id}', [InsurancePolicyCoverController::class, 'destroy']);
 
-Route::get('/dashboard/home-insurance/create', function () {
-    return view('dashboard.homeinsurance.create');
-});
+Route::get('/{insurancePolicy:name}-insurance/edit', [InsurancePolicyController::class, 'edit']);
+Route::patch('/insurance-policies/{insurancePolicy:name}-insurance', [InsurancePolicyController::class, 'update']);
 
-Route::get('/', function () {
-    return view('dashboard.homeinsurance.index');
-});
+Route::get('/', [InsurancePolicyController::class, 'index']);
+Route::get('/insurance-policies', [InsurancePolicyController::class, 'index']);
+
+// Route::get('/insurance-policies/{insurancePolicy:name}-insurance', [InsurancePolicyController::class, 'find']);
+Route::get('/insurance-policies/covers/{type}', [InsurancePolicyCoverController::class, 'index']);
