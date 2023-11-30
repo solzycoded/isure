@@ -24,12 +24,12 @@ class InsuranceCoverController extends Controller
             return response()->json([
                 'success' => isset($insuranceCover->id) ? true : false
             ], 200);
-        }
+        } 
 
         return response()->json([
             'success' => false,
             'not found' => $request['type'] . ' insurance policy not found!'
-        ], 302);
+        ], 400);
     }
 
     private function findInsurance($type){

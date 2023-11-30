@@ -18,7 +18,7 @@ class InsurancePolicyCoverController extends Controller
 
     // This function implements the factory pattern
     public function store(array $attributes){
-        $insurance = InsuranceFactory::build($attributes['type'], $attributes);
+        $insurance = InsuranceFactory::build($attributes['type'], $attributes); 
 
         $insuranceCover = $insurance->createInsurance();
 
@@ -33,7 +33,7 @@ class InsurancePolicyCoverController extends Controller
 
         return view("dashboard.insurance.index", compact('insuranceCovers', 'type'));
     }
-
+ 
     // Insurance lister is called here and it returns a method, depending on the type that's passed from "index"
     private function list($type){
         $insurance = new InsuranceLister();
